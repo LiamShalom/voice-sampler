@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Audio files
+*.mp3
+*.wav
+
+# OS files
+.DS_Store
