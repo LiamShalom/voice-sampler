@@ -47,19 +47,6 @@ def get_voices(client: ElevenLabs) -> list:
     return response.voices
 
 
-def list_voices(client: ElevenLabs) -> None:
-    """List all available voices."""
-    print("\n🎤 Available Voices:\n")
-    print(f"{'#':<4} {'Name':<25} {'Voice ID':<25} {'Category'}")
-    print("─" * 75)
-    
-    voices = get_voices(client)
-    for i, voice in enumerate(voices, 1):
-        category = getattr(voice, 'category', 'unknown')
-        print(f"{i:<4} {voice.name:<25} {voice.voice_id:<25} {category}")
-    
-    print()
-
 
 def select_voice(client: ElevenLabs, current_voice: str) -> str:
     """Interactive voice selection. Returns selected voice ID."""
@@ -125,7 +112,7 @@ def generate_audio(
 
 def print_settings(settings: dict) -> None:
     """Print current voice settings."""
-    print("\n⚙️  Current Settings:")
+    print("\n  Current Settings:")
     print(f"   Stability:  {settings.get('stability', 0.5):.2f}  (0=variable, 1=stable)")
     print(f"   Similarity: {settings.get('similarity_boost', 0.75):.2f}  (0=diverse, 1=close to original)")
     print(f"   Style:      {settings.get('style', 0.0):.2f}  (0=neutral, 1=exaggerated)")
@@ -135,11 +122,6 @@ def main():
     # Initialize client first for --list-voices
     api_key = get_api_key()
     client = ElevenLabs(api_key=api_key)
-    
-    # Check for --list-voices flag
-    if len(sys.argv) > 1 and sys.argv[1] == "--list-voices":
-        list_voices(client)
-        sys.exit(0)
     
     # Get phrase from command line or prompt
     if len(sys.argv) > 1:
