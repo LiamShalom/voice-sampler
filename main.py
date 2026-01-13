@@ -214,7 +214,9 @@ def main():
             elif choice == "s":
                 save_name = input("Save as (filename without extension): ").strip()
                 if save_name:
-                    save_path = Path.cwd() / f"{save_name}.mp3"
+                    recordings_dir = Path.cwd() / "recordings"
+                    recordings_dir.mkdir(exist_ok=True)
+                    save_path = recordings_dir / f"{save_name}.mp3"
                     with open(audio_path, "rb") as src:
                         with open(save_path, "wb") as dst:
                             dst.write(src.read())
