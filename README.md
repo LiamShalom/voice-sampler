@@ -35,6 +35,21 @@ A command-line tool for generating and testing voice audio using ElevenLabs. Per
 
 ## Usage
 
+### Web UI (Streamlit)
+
+```bash
+streamlit run app.py
+```
+
+This opens a web interface with:
+- Voice selection dropdown
+- Text input
+- Settings sliders
+- Audio player
+- Download/save buttons
+
+### Command Line
+
 **Generate audio for a phrase:**
 ```bash
 python main.py "Hello, this is a test!"
