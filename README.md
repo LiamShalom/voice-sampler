@@ -2,7 +2,7 @@
 
 A command-line tool for generating and testing voice audio using ElevenLabs. Perfect for sampling different voices, tweaking settings, and saving recordings.
 
-# Website[https://voice-sampler.streamlit.app/]
+[Website](https://voice-sampler.streamlit.app/)
 
 ## Features
 
